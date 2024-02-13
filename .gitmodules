@@ -1,0 +1,6 @@
+[submodule "url-shortener-api"]
+	path = url-shortener-api
+	url = https://github.com/BastienCarbonnier/url-shortener-api
+[submodule "url-shortener-ui"]
+	path = url-shortener-ui
+	url = https://github.com/BastienCarbonnier/url-shortener-ui
