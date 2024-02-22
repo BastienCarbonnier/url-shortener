@@ -20,8 +20,35 @@ docker compose -f docker/url-shortener.yaml -p "url-shortener" up
 
 You can access this application at http://localhost:3001
 
+## Testing
+
+### Frontend
+
+Use of Cypress library.
+
+To launch the test you need first to go in 'url-shortener-ui' directory and launch the application with this command :
+
+```bash
+docker compose -f cypress/docker/url-shortener.yaml -p "url-shortener-cy" up
+```
+
+And then run : 
+```bash
+npm run cy:run-e2e
+```
+
+### Backend
+
+Use of test containers for integration test and mockito for unit tests.
+
+You can launch the tests with the command : 
+```bash
+./gradlew test
+```
+
+One idea of improvement could be to add more test to check exceptions. I added Jacoco plugin to calculate coverage for backend and now I have a couverture of 97%. 
+![Coverage](coverage.png)
+
 ## Idea of improvement
-* Adding Cypress test for frontend
-* Adding Integration/Unit test for backend
 * Encrypt the full url saved in database
 * Adding statistics view in frontend
